@@ -1,7 +1,7 @@
 {
-  "name": "beyondsilence.ca",
+  "name": "nodejs-demo-app.ca",
   "version": "2.87.0",
-  "description": "Beyond Silence Website",
+  "description": "NodeJS & Mongo DB Demo App",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": ""
   },
-  "author": "PSHSA",
+  "author": "XXX",
   "license": "MIT",
   "dependencies": {
     "apostrophe": "2.87.0",
