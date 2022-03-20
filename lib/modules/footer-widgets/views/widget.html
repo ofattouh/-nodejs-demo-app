@@ -1,0 +1,75 @@
+{# Widget used in the Footer section #}
+
+<footer>
+	<div class="five-column-section">
+
+	  {# Logos #}
+
+		<div class="logoArea">
+
+		{% set i = 0 %}
+		{% macro field(name, value, class) %}
+
+				{% if i < 4 %}
+					{% set firstImage = apos.images.first(value) %}
+					<a href="{{ name }}" class="logolLinks" target="_blank" ><img src="{{ apos.attachments.url(firstImage) }}" alt="{{ name }}" /></a>
+				{% endif %}
+
+		{% endmacro %}
+
+    {% for name, value in data.widget.logos %}
+			{% if value|is_not_empty_string %}
+    		{% set hyperlink = value %}
+  	  {% endif %}
+
+			{% if value|is_not_null_object %}
+				{% set i = i + 1 %}
+				{{ field(hyperlink, value, 'logo-column') }}
+	 		{% endif %}
+    {% endfor %}
+
+
+			{% set firstImageURL = data.widget.logos.srsLogo %}
+			<a href="{{data.widget.logos.srs}}" class="logolLinks" target="_blank" ><img src="{{firstImageURL}}" alt="{{data.widget.logos.srs}}" /></a>
+
+
+		{# Logos #}
+
+		</div>
+
+    {# Social links #}
+
+	  {% set i = 0 %}
+
+	  {% macro field(name, value, class) %}
+	  	{% if i == 1 %}<div class="{{ class }}"><p>Follow PSHSA</p><br>{% endif %}
+				{% set firstImage = apos.images.first(value) %}
+        <a href="{{ name }}" class="socialLinks" target="_blank" ><img src="{{ apos.attachments.url(firstImage) }}" alt="{{ name }}" /></a>
+    	{% if i == 5 %}</div>{% endif %}
+		{% endmacro %}
+
+    {% for name, value in data.widget.socialMediaIcons %}
+  		{% if value|is_not_empty_string %}
+    		{% set hyperlink = value %}
+  	  {% endif %}
+
+  		{% if value|is_not_null_object %}
+  			{% set i = i + 1 %}
+  			{{ field(hyperlink, value, 'socialArea') }}
+	 		{% endif %}
+    {% endfor %}
+
+    {# Social links #}
+
+	</div>
+</footer>
+
+{#
+	{% set item = 'foo' %}
+	{% if item|is_string %} {{ item }} {% endif %}
+	{{ apos.log('\n\n===============\ndata.widget:\n===============\n') }}
+	{{ apos.log(data.widget.logos) }}
+	{{ apos.log(data.widget.socialMediaIcons) }}
+	{{ apos.log(data.widget.logos.srsLogo) }}
+	{{ apos.log(apos.attachments.url(apos.images.first(data.widget.logos.pshsaLogo))) }}
+#}

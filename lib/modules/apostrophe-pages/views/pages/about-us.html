@@ -1,0 +1,49 @@
+{# About Us page template #}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="main-content">
+    {{
+	    apos.area(data.page, 'body', {
+		    widgets: {
+		      'content-block-layout' : {
+			      addLabel: 'Add Content Block',
+						editLabel: 'Edit Content Block' 
+					}
+		    },
+		    controls: {
+			    movable: true,
+			    removable: true,
+			    position: 'top-right'
+			  }
+		  })
+	  }}
+  </div>
+  
+  {#
+  <div class="textBlock">
+	 {{ apos.singleton(data.page, 'textBlock', 'apostrophe-rich-text', {
+        toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink', 'Anchor', 'Table', 'BulletedList', 'Blockquote', 'Strike', 'Subscript', 'Superscript', 'Split'],
+        styles: [
+        { name: 'Header (h1)', element: 'h1' },
+        { name: 'Header (h2)', element: 'h2' },
+        { name: 'Header (h3)', element: 'h3' },
+        { name: 'Header (h4)', element: 'h4' },
+        { name: 'Header (h5)', element: 'h5' },
+        { name: 'Header (h6)', element: 'h6' },
+        { name: 'Paragraph (P)', element: 'p' }
+        ]
+   }) }} 
+  </div>
+  #}
+  
+{% endblock %}
+
+
+{#
+
+{{ apos.log('\n\n===============\ndata.widget:\n===============\n') }}
+{{ apos.log(data.page.body.items) }}
+
+#}

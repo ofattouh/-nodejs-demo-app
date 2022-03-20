@@ -1,0 +1,20 @@
+{# Resources page template #}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="main-content">
+    
+	{{
+    apos.area(data.page, 'body', {
+	    widgets: {
+	      'content-block-layout' : {
+		      addLabel: 'Add Content Block',
+					editLabel: 'Edit Content Block'  
+		    }
+	    }
+	  })
+  }}
+	
+  </div>
+{% endblock %}

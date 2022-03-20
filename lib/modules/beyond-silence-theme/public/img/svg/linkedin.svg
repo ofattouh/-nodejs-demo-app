@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Social Icons/Default/Linkedin</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#7B2532" offset="0%"></stop>
+            <stop stop-color="#A43243" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-790.000000, -4299.000000)">
+        <g id="Icons" transform="translate(80.000000, 4208.000000)">
+            <g id="linkedin" transform="translate(710.000000, 91.000000)">
+                <path d="M17.5,34.25 C26.7507697,34.25 34.25,26.7507697 34.25,17.5 C34.25,8.24923025 26.7507697,0.75 17.5,0.75 C8.24923025,0.75 0.75,8.24923025 0.75,17.5 C0.75,26.7507697 8.24923025,34.25 17.5,34.25 Z" id="Oval-56" stroke="url(#linearGradient-1)" stroke-width="1.5" fill-rule="nonzero"></path>
+                <path d="M9.48638521,13.9089201 L13.0920187,13.9089201 L13.0920187,24.966197 L9.48638521,24.966197 L9.48638521,13.9089201 Z M11.4093897,12.4666668 C10.2075119,12.4666668 9.36619718,11.5051645 9.36619718,10.4234742 C9.36619718,9.34178394 10.2075119,8.38028169 11.4093897,8.38028169 C12.49108,8.38028169 13.4525823,9.34178394 13.4525823,10.4234742 C13.3323942,11.625352 12.49108,12.4666668 11.4093897,12.4666668 Z M25.9521125,24.966197 L22.4666666,24.966197 L22.4666666,19.6779342 C22.4666666,18.3558683 22.4666666,16.6732394 20.7840377,16.6732394 C18.9812207,16.6732394 18.7408451,18.1154927 18.7408451,19.5577466 L18.7408451,24.966197 L15.2553992,24.966197 L15.2553992,13.9089201 L18.6206571,13.9089201 L18.6206571,15.3511735 C19.1014082,14.5098593 20.1830985,13.548357 21.8657275,13.548357 C25.3511739,13.548357 25.9521125,15.8319246 25.9521125,18.8366199 L25.9521125,24.966197 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+            </g>
+        </g>
+        <g id="!!!Icons-for-Export!!!" transform="translate(79.000000, 4208.000000)"></g>
+    </g>
+</svg>

@@ -1,0 +1,32 @@
+{# No access page template #}
+
+<!DOCTYPE html>
+{# You could extend data.outerLayout here, or not. #}
+{# This default version does not so it works with all sites. #}
+
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>{{ __("401 - Unauthorized Access Error") }}</title>
+  <style type="text/css">
+    body {
+      background-color: #cfc;
+    }
+    main {
+      margin: auto;
+      margin-top: 100px;
+      width: 600px;
+      border-radius: 12px;
+      background-color: #efe;
+      padding: 20px;
+      font-family: Helvetica;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>{{ __("401 - Unauthorized Access Error") }}</h1>
+    <p>{{ __("401 - Unauthorized Access Error.") }}</p>
+  </main>
+</body>
+</html>

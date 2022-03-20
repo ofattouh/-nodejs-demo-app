@@ -1,0 +1,152 @@
+{# Automatically extends the right outer layout and also handles AJAX siutations #}
+{% extends data.outerLayout %}
+
+{% block title %}
+
+	{# Create a useful, SEO-friendly title tag based on what we have #}
+	{% if data.piece %}
+	  {% set title = data.piece.title %}
+	{% elseif data.page %}
+	  {% set title = data.page.title %}
+	{% else %}
+	  {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
+	  {% set title = "" %}
+	{% endif %}
+	
+	{% if data.global.siteTitle %}
+    {% set siteTitle = data.global.siteTitle %} 
+  {% endif %}
+  
+	{{ siteTitle }} | {{ title }}
+	
+{% endblock %}
+
+{% block extraHead %}
+
+  {# This block outputs its contents in the HTML document's <head>. It is a good place to put extra <script> <link> and <meta> tags. #}
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130206896-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-130206896-1');
+	</script>
+	
+  {% if data.global.favicon %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ data.global.favicon }}" />
+  {% endif %}
+  
+  {% if data.global.externalStyles %}
+  	<link rel="stylesheet" type="text/css" href="{{ data.global.externalStyles }}" />
+  {% endif %}
+  
+  {# First condition is evaluated first and then output  #}
+  {% set context     = data.piece or data.page or data.widget or data.global %}
+  {% set description = context.description or apos.areas.plaintext(context.body) or context.defaultDescription %}
+  {% set firstImage  = apos.images.first(data.global.defaultImage) or apos.images.first(context.thumbnail, 'thumbnail') or apos.images.first(context.body, 'body') %}
+  
+  <!-- Meta tags -->
+  
+  <meta charset="UTF-8" />
+   
+  {% if description %}
+  	<meta name="description"         content="{{ description | truncate(200) | e }}" />
+  	<meta name="twitter:description" content="{{ description | truncate(200) | e }}" />
+  	<meta property="og:description"  content="{{ description | truncate(200) | e }}" />
+  {% endif %}
+  
+  {% if firstImage %}
+  	<meta name="twitter:image" content="{{ apos.attachments.url(firstImage) }}" />
+  	<meta property="og:image"  content="{{ apos.attachments.url(firstImage) }}" />  
+  {% endif %}
+  
+  <!-- Twitter Card data -->
+	<meta name="twitter:card"    content="summary" />
+	<meta name="twitter:site"    content="@PSHSAca" />
+	<meta name="twitter:title"   content="{{ siteTitle }} - {{ title }}" />
+	<meta name="twitter:creator" content="@pshsaca" />
+
+  <!-- Open Graph data -->
+  <meta property="og:title"     content="{{ siteTitle }} - {{ title }}" /> 
+  <meta property="og:type"      content="website" />
+  <meta property="og:url"       content="{{ context._url }}" />
+  <meta property="og:site_name" content="{{ siteTitle }}" />
+  <meta property="og:locale"    content="en_US" />
+  
+  <meta name="google-site-verification" content="Bt8jENcaU4QkR14ScFmyYVGpWO6p0a8bzSuSCpLDJf8" />
+  
+  <!-- Meta tags --> 
+  
+{% endblock %}
+
+{% block beforeMain %}
+
+  {# We recommend you use the beforeMain block for global page components like headers or navigation. #}
+  
+  {{
+    apos.area(data.global, 'nav', {
+	    widgets: {
+	      'nav': {}
+	    }
+	  })
+  }}
+  
+{% endblock %}
+
+{% block main %}
+
+  {# Your page templates in the apostrophe-pages module will override this block. This is where your page-specific content should go. #}
+  
+{% endblock %}
+
+{% block afterMain %}
+
+  {# This would be a great place to put a global footer. #}
+   
+  {{
+    apos.area(data.global, 'footer', {
+	    widgets: {
+		    'footer': {
+			    addLabel: 'Add Footer Widget',
+  				editLabel: 'Edit Footer Widget'
+			  }
+	    }
+	  })
+  }}
+	 
+{% endblock %}
+
+
+
+{#
+
+Debug:
+
+
+{{ apos.log(process.env) }}
+
+{{ apos.log(apos) }}
+
+{{ apos.log(apos.assets.stylesheets('anon')) }}
+
+{{ apos.log(data.global.external_styles) }}
+
+{{ apos.log('\n\nPage Description:\n') }}
+{{ apos.log(description) }}
+
+{{ apos.log('\n\nWidget Area Description:\n') }}
+{{ apos.log(apos.areas.plaintext(context.body)) }}
+
+{{ apos.log('\n\nfirstImage:\n') }}
+{{ apos.log(firstImage) }}
+
+{{ apos.log('\n\nfirstImage attachments:\n') }}
+{{ apos.log(apos.attachments.url(firstImage, { size: 'full' })) }}
+
+{{ apos.log('\n\n==============\ndata.page\n==============\n') }}
+{{ apos.log(data.page) }}
+
+
+#}

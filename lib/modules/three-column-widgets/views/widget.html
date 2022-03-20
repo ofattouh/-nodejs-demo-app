@@ -1,0 +1,31 @@
+{# Three Columns widget used to output the Footer section #}
+
+<footer>
+	<div class="three-column-section">
+	
+    <div class="three-column-area">
+      {% for item in data.widget.left3ColsFooter.items %}
+        {% if item.content %}
+          {{ item.content | safe }}
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    <div class="three-column-area">
+      {% for item in data.widget.middle3ColsFooter.items %}
+        {% if item.content %}
+          {{ item.content | safe }}
+        {% endif %}
+      {% endfor %}     
+    </div>
+	
+    <div class="three-column-area">
+      {% for item in data.widget.right3ColsFooter.items %}
+        {% if item.content %}
+          {{ item.content | safe }}
+        {% endif %}
+      {% endfor %}      
+    </div>
+	    
+	</div>
+</footer>

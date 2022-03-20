@@ -1,0 +1,48 @@
+{# Nav widget used to output the top navigation section #}
+
+<nav>
+
+	<div class="navTopDiv">
+
+		<a href="/" class="navTopLogoAnchor">
+	    {% if data.global.logo %}
+		    <img src="{{ data.global.logo }}" width="40%" height="40%" alt="Beyond Silence Logo"/>
+			{% endif %}
+    </a>
+	
+    <div class="navTopLinksDiv">
+		  {% for navOption in data.widget._topNavOption %}
+		    {% if navOption._id %}
+		      <span class="navTopLinksSpan">
+			      <a class="navTopLinksAnchor" onclick="location.href = '{{ navOption.slug }}'">{{ navOption.title }}</a> 
+			    </span>
+		    {% endif %}
+		  {% endfor %}
+    </div>
+    
+  </div>
+
+
+</nav>
+
+
+
+{#
+
+<script>console.log('{{ item.content | dump }}')</script>
+
+{{ apos.log('\n\ndata.widget:\n') }}
+{{ apos.log(data.widget) }}
+
+{{ apos.log('\n\ndata.widget._topNavOption:\n') }}
+{{ apos.log(data.widget._topNavOption) }}
+
+{{ apos.log(data.global.logo) }}
+
+#}
+
+
+
+
+
+

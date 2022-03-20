@@ -1,0 +1,15 @@
+{# One Column widget used to output the Footer section #}
+
+<footer>
+	<div class="one-column-section">
+  
+    <div class="one-column-area">
+      {% for item in data.widget.oneColFooter.items %}
+        {% if item.content %}
+          {{ item.content | safe }}
+        {% endif %}
+      {% endfor %}     
+    </div>
+	    
+	</div>
+</footer>

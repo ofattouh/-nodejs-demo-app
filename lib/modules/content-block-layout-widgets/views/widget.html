@@ -1,0 +1,163 @@
+{#
+  Content Block Row widget where each Column is made of widgets select by the back end user. Nesting widgets is supported.
+  1. One Col Row
+  2. Two Cols Row with left Col take 50% width
+  3. Two Cols Row with left Col take 70% width
+  4. Two Cols Row with left Col take 30% width
+  5. Two Cols Row with left Col take 80% width
+  6. Two Cols Row with left Col take 20% width
+  7. Three Cols Row (1/3 width each)
+  8. Four Cols Row (1/4 width each)
+#}
+
+ <!-- Define column name and order on smaller screens(mobile) -->
+{%
+  set contentBlockLayouts = {
+    twoCols50by50: [
+      ['twoColsLeft50', 'two-cols-left-area-50-mobile'],
+      ['twoColsRight50', 'two-cols-right-area-50-mobile']
+    ],
+    twoCols70by30: [
+      ['twoColsLeft70', 'two-cols-left-area-70-mobile'],
+      ['twoColsRight30', 'two-cols-left-area-30-mobile']
+    ],
+    twoCols30by70: [
+      ['twoColsLeft30', 'two-cols-left-area-30-mobile'],
+      ['twoColsRight70', 'two-cols-left-area-70-mobile']
+    ],
+    twoCols80by20: [
+      ['twoColsLeft80', 'two-cols-left-area-80-mobile'],
+      ['twoColsRight20', 'two-cols-left-area-20-mobile']
+    ],
+    twoCols20by80: [
+      ['twoColsLeft20', 'two-cols-left-area-20-mobile'],
+      ['twoColsRight80', 'two-cols-left-area-80-mobile']
+    ],
+    threeCols: ['threeColsLeft', 'threeColsMiddle', 'threeColsRight'],
+    fourCols: ['fourColsLeft', 'fourColsMiddleLeft', 'fourColsMiddleRight', 'fourColsRight']
+  }
+%}
+
+<!-- Widgets can be added for each content block -->
+{%
+  set getWidgets = {
+    widgets: {
+      'apostrophe-rich-text': {
+	    toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink', 'Anchor', 'Table', 'BulletedList', 'Blockquote', 'Strike', 'Subscript', 'Superscript', 'Split'],
+	    styles: [
+	      { name: 'Header (h1)', element: 'h1' },
+	      { name: 'Header (h2)', element: 'h2' },
+	      { name: 'Header (h3)', element: 'h3' },
+	      { name: 'Header (h4)', element: 'h4' },
+	      { name: 'Header (h5)', element: 'h5' },
+	      { name: 'Header (h6)', element: 'h6' },
+	      { name: 'Paragraph (P)', element: 'p' }
+	      ]
+      },
+      'apostrophe-images': {
+        limit: 1,
+        size: 'original',
+        controls: {
+          removable: true,
+          movable: true,
+          position: 'bottom-right'
+        }
+      }
+    }
+  }
+  
+%}
+
+<section>
+	<div class="content-block-row-div">
+	
+	  {% if data.widget.contentBlockLayout === 'oneCol' %}
+	    <div class="row one-col-div">
+	        {{ apos.area(data.widget, 'oneCol', getWidgets) }}
+	    </div>
+	    
+	  {% elseif data.widget.contentBlockLayout === 'twoCols50by50' %}
+	    <div class="row two-cols-50-50-outer-div">
+	    	{% set i = 1 %}
+	      {% for colName, orderOnMobile in contentBlockLayouts.twoCols50by50 %}
+	        {% set orderedCol = orderOnMobile if data.widget.reverse %}
+	        <div class="twocols5050innerdiv{{i}} {{orderedCol}}">
+	          {{ apos.area(data.widget, colName, getWidgets) }}
+	        </div>
+	      {% set i = i + 1 %}
+	      {% endfor %}
+	    </div>
+	
+	  {% elseif data.widget.contentBlockLayout === 'twoCols70by30' %}
+		  <div class="row two-cols-70-30-outer-div">
+		  	{% set i = 1 %}
+		    {% for colName, orderOnMobile in contentBlockLayouts.twoCols70by30 %}
+		    	{% set orderedCol = orderOnMobile if data.widget.reverse %}
+		      <div class="twocols7030innerdiv{{i}} {{orderedCol}}">
+		        {{ apos.area(data.widget, colName, getWidgets) }}
+		      </div>
+		    {% set i = i + 1 %}
+		    {% endfor %}
+		  </div>
+	
+		{% elseif data.widget.contentBlockLayout === 'twoCols30by70' %}
+		  <div class="row two-cols-30-70-outer-div">
+		  	{% set i = 1 %}
+		    {% for colName, orderOnMobile in contentBlockLayouts.twoCols30by70 %}
+		    	{% set orderedCol = orderOnMobile if data.widget.reverse %}
+		      <div class="twocols3070innerdiv{{i}} {{orderedCol}}">
+		        {{ apos.area(data.widget, colName, getWidgets) }}
+		      </div>
+		    {% set i = i + 1 %}
+		    {% endfor %}
+		  </div>
+		  
+	  {% elseif data.widget.contentBlockLayout === 'twoCols80by20' %}
+		  <div class="row two-cols-80-20-outer-div">
+		  	{% set i = 1 %}
+		    {% for colName, orderOnMobile in contentBlockLayouts.twoCols80by20 %}
+		      {% set orderedCol = orderOnMobile if data.widget.reverse %}
+		      <div class="twocols8020innerdiv{{i}} {{orderedCol}}">
+		        {{ apos.area(data.widget, colName, getWidgets) }}
+		      </div>
+		    {% set i = i + 1 %}
+		    {% endfor %}
+		  </div>
+	
+		{% elseif data.widget.contentBlockLayout === 'twoCols20by80' %}
+		  <div class="row two-cols-20-80-outer-div">
+		  	{% set i = 1 %}
+		    {% for colName, orderOnMobile in contentBlockLayouts.twoCols20by80 %}
+		      {% set orderedCol = orderOnMobile if data.widget.reverse %}
+		      <div class="twocols2080innerdiv{{i}} {{orderedCol}}">
+		        {{ apos.area(data.widget, colName, getWidgets) }}
+		      </div>
+		    {% set i = i + 1 %}
+		    {% endfor %}
+		  </div>
+		  
+	  {% elseif data.widget.contentBlockLayout === 'threeCols' %}
+		  <div class="row three-cols-outer-div">
+		  	{% set i = 1 %}
+		    {% for colName in contentBlockLayouts.threeCols %}
+		      <div class="three-cols-inner-div">
+		        {{ apos.area(data.widget, colName, getWidgets) }}
+		      </div>
+		    {% set i = i + 1 %}
+		    {% endfor %}
+		  </div>
+	
+	  {% elseif data.widget.contentBlockLayout === 'fourCols' %}
+		  <div class="row four-cols-outer-div">
+		  	{% set i = 1 %}
+		    {% for colName in contentBlockLayouts.fourCols %}
+		      <div class="four-cols-inner-div">
+		        {{ apos.area(data.widget, colName, getWidgets) }}
+		      </div>
+		    {% set i = i + 1 %}
+		    {% endfor %}
+		  </div>
+	  {% endif %}
+	  
+	</div>
+</section>

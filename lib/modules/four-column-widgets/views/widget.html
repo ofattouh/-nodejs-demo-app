@@ -1,0 +1,39 @@
+{# Four Columns widget used to output the Footer section #}
+
+<footer>
+	<div class="four-column-section">
+	
+    <div class="four-column-area">
+      {% for item in data.widget.left4ColsFooter.items %}
+        {% if item.content %}
+          {{ item.content | safe }}
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    <div class="four-column-area">
+      {% for item in data.widget.middleLeft4ColsFooter.items %}
+        {% if item.content %}
+          {{ item.content | safe }}
+        {% endif %}
+      {% endfor %}     
+    </div>
+	
+    <div class="four-column-area">
+      {% for item in data.widget.middleRight4ColsFooter.items %}
+        {% if item.content %}
+          {{ item.content | safe }}
+        {% endif %}
+      {% endfor %}      
+    </div>
+	    
+    <div class="four-column-area">
+      {% for item in data.widget.right4ColsFooter.items %}
+        {% if item.content %}
+          {{ item.content | safe }}
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+	</div>
+</footer>

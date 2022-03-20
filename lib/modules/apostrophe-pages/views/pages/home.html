@@ -1,0 +1,69 @@
+{# Landing page template #}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  
+  {% if data.page.parkedId === 'home' %}
+    {% set isHomePage = 'home-page-content' %}
+  {% endif %}
+  
+  <div class="main-content {{ isHomePage }}">
+  
+    {#
+    <h3>
+      {% if not data.user %}
+        <a class="login-link" href="/login">Login</a>
+      {% endif %}
+    </h3>
+    #}
+    
+    {{
+	    apos.area(data.page, 'body', {
+		    widgets: {
+		      'apostrophe-video' : {},
+		      'content-block-layout' : {
+			      addLabel: 'Add Content Block',
+						editLabel: 'Edit Content Block' 
+					}
+		    }
+		  })
+	  }}
+  
+    {#
+    
+    {{
+	    apos.area(data.page, 'body', {
+		    widgets: {
+		      'apostrophe-video' : {},
+		      'apostrophe-rich-text': {
+			      toolbar: [ 'Styles', 'Bold', 'Italic', 'Link', 'Unlink', 'Anchor', 'Table', 'BulletedList', 'Blockquote', 'Strike', 'Subscript', 'Superscript', 'Split'],
+            styles: [
+            { name: 'Header (h1)', element: 'h1' },
+            { name: 'Header (h2)', element: 'h2' },
+            { name: 'Header (h3)', element: 'h3' },
+            { name: 'Header (h4)', element: 'h4' },
+            { name: 'Header (h5)', element: 'h5' },
+            { name: 'Header (h6)', element: 'h6' },
+            { name: 'Paragraph (P)', element: 'p' }
+            ],
+            addLabel: 'Add Content (HTML)',
+					  editLabel: 'Edit Content (HTML)'
+		      }
+		    }
+		  })
+	  }}
+	  
+	  #}
+	  	
+  </div>
+  
+{% endblock %}
+
+
+{#
+
+{{ apos.log('\n\ndata.page.:\n') }}
+{{ apos.log(data.page.parkedId) }}
+
+#}

@@ -1,0 +1,474 @@
+@import "utils/reset.less";
+
+// Delete the boilerplate CSS below when you are ready to dive in and customize your sites:
+
+/**********************************************************************************************
+
+  Commented out by Omar
+
+	body { background-color: @apos-light; }
+
+	body {
+	  background-color: #345;
+	  font-family: Helvetica, Sans;
+	}
+
+	header {
+	  background-color: #def;
+	  max-width: 1200px;
+	  margin: auto;
+	  padding-top: 16px;
+	  h1 {
+	    margin: 32px 0;
+	    font-size: 48px;
+	    text-align: center;
+	  }
+	}
+
+	main {
+	  background-color: #fefeff;
+	  border-top: 2px solid #345;
+	  max-width: 1200px;
+	  margin: auto;
+	  min-height: 600px;
+	  padding: 32px;
+	}
+
+	.tabs {
+	  margin: auto;
+	  list-style: none;
+	  text-align: center;
+	  .tab {
+	    display: inline-block;
+	    padding: 20px;
+	    a {
+	      text-decoration: underline;
+	      color: inherit;
+	    }
+	    &.active {
+	      a {
+	        text-decoration: none;
+	      }
+	    }
+	  }
+	}
+
+	.breadcrumbs {
+	  list-style: none;
+	  padding: 20px 32px;
+	  .breadcrumb {
+	    display: inline-block;
+	    &:after
+	    {
+	      content: ' » ';
+	      display: inline-block;
+	      padding: 0 16px;
+	    }
+	    &:last-child:after {
+	      content: '';
+	    }
+	    a {
+	      text-decoration: none;
+	      color: inherit;
+	    }
+	  }
+	}
+
+	.apos-image-widget-image-title {
+	  display: none;
+	}
+
+**********************************************************************************/
+
+
+/**********************************************************************************
+	LESS/CSS Rules - Added by Omar
+**********************************************************************************/
+
+/**********************************************************************************
+	Main content - Page body
+**********************************************************************************/
+
+.main-content {
+  font-family: Arial, sans-serif;
+  margin: 2rem auto;
+  max-width: 90%;
+  font-size: 16px;
+	line-height: 24px;
+  color: #353535;
+  overflow: auto;
+
+  .login-link {
+    float: right;
+    color: @apos-white;
+  }
+
+  // Basic rich-text editor styles:
+  h1, h2 {
+  	font-weight: 700;
+  	line-height: 1.2em;
+    margin-bottom: .5em;
+  }
+
+  h1 {
+  	font-size: 2.5rem;
+  }
+
+  h2 {
+  	font-size: 2rem;
+  }
+
+  h3 {
+  	font-size: 1.2rem;
+  	margin-bottom: .25em;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  strong { font-weight: bold; }
+  em { font-style: italic; }
+
+  a {
+  	font-weight: bolder;
+  	color: #FC3B5E;
+  	text-decoration: none;
+  }
+  a:hover {
+  	color: #9C2339;
+  	text-decoration: none;
+  }
+
+  ol, ul {
+    margin: .5em 2em;
+    list-style-type: disc;
+	}
+
+	.apos-video-player {
+	  width: 90%;
+	  margin: 0 auto;
+
+	  iframe {
+	  	max-height: 500px;
+
+	    @media screen and (max-width: 990px) {
+	    	max-height: 350px;
+	    }
+	  }
+	}
+
+}
+
+
+/**********************************************************************************
+  Navigation Top section
+**********************************************************************************/
+
+nav {
+  font-family: Arial, sans-serif;
+  color: #353535;
+  font-size: 20px;
+
+  a { font-weight: bold; }
+  a:hover {	color: rgba(0,0,0,.5); }
+  a.active { color: rgba(0,0,0,.5); }
+  a.active:hover { color: inherit; }
+
+  .navTopDiv {
+	  padding: .5rem 0;
+  	overflow: hidden;
+  	box-shadow: 0 0 10px rgba(0,0,0,.5);
+    text-align: center;
+    a {
+	  	cursor: pointer;
+	  }
+	}
+
+	.navTopLogoAnchor {
+	   @media screen and (min-width: 1012px) {
+      float: left;
+    }
+	}
+
+	.navTopLinksSpan {
+	   display: block;
+     margin: 1% 0;
+
+     @media screen and (min-width: 1013px) {
+       display: inline;
+       margin-top: 0;
+       margin-left: 2%;
+     }
+	}
+
+	.navTopLinksDiv {
+    margin: 0 auto;
+		width: 80%;
+    padding-top: 25px;
+
+    @media screen and (min-width: 1013px) {
+      float: right;
+      width: 60%;
+    }
+	}
+
+}
+
+/**********************************************************************************
+  Content Block Layout
+**********************************************************************************/
+
+.content-block-row-div {
+	max-width: 90%;
+  margin: 20px auto;
+
+	.row {
+		max-height: 15%;
+		padding: 3% 0 3% 0;
+		clear: both;
+	}
+
+	.textBlock {
+		font-family: 'Karla', sans-serif;
+	  margin-left: 5%;
+	  max-width: 60%;
+	  font-size: 20px;
+		line-height: 20px;
+		padding-top: 5%;
+		clear: both;
+	}
+
+	.twocols5050innerdiv1 {
+	  float: left;
+	  max-width: 50%;
+	}
+
+	.twocols7030innerdiv1 {
+	  float: left;
+	  max-width: 70%;
+	}
+
+	.twocols3070innerdiv1 {
+	  float: left;
+	  max-width: 30%;
+	}
+
+	.twocols8020innerdiv1 {
+	  float: left;
+	  max-width: 80%;
+	}
+
+	.twocols2080innerdiv1 {
+	  float: left;
+	  max-width: 20%;
+	}
+
+	.twocols5050innerdiv1, .twocols7030innerdiv1, .twocols3070innerdiv1, .twocols8020innerdiv1, .twocols2080innerdiv1 {
+		padding: 0 5% 0 0;
+	}
+
+	.twocols5050innerdiv2, .twocols7030innerdiv2, .twocols3070innerdiv2, .twocols8020innerdiv2, .twocols2080innerdiv2 {
+		padding: 0 0 0 2%;
+
+		/* Extra small devices (phones, 600px and down) */
+		@media only screen and (max-width: 600px) {
+			clear: both;
+		}
+	}
+
+	.twocols5050innerdiv2 {
+		/* Small devices (portrait tablets and large phones, 600px and up) */
+		@media only screen and (min-width: 600px) {
+			float: left;
+	  	max-width: 50%;
+		}
+	}
+
+	.twocols7030innerdiv2 {
+		/* Small devices (portrait tablets and large phones, 600px and up) */
+		@media only screen and (min-width: 600px) {
+			float: left;
+	  	max-width: 30%;
+		}
+	}
+
+	.twocols3070innerdiv2 {
+		/* Small devices (portrait tablets and large phones, 600px and up) */
+		@media only screen and (min-width: 600px) {
+			float: left;
+	  	max-width: 70%;
+		}
+	}
+
+	.twocols8020innerdiv2 {
+		/* Small devices (portrait tablets and large phones, 600px and up) */
+		@media only screen and (min-width: 600px) {
+			float: left;
+	  	max-width: 20%;
+		}
+	}
+
+	.twocols2080innerdiv2 {
+		/* Small devices (portrait tablets and large phones, 600px and up) */
+		@media only screen and (min-width: 600px) {
+			float: left;
+	  	max-width: 80%;
+		}
+	}
+
+	.three-cols-inner-div {
+	  float: left;
+	  max-width: 33.33333%;
+	}
+
+	.four-cols-inner-div {
+	  float: left;
+	  max-width: 25%;
+	}
+
+	.three-cols-inner-div, .four-cols-inner-div{
+		padding: 2%;
+	}
+
+}
+
+/**********************************************************************************
+  Footer section
+**********************************************************************************/
+
+footer {
+
+	.one-column-section, .two-column-section, .three-column-section, .four-column-section, .five-column-section {
+    max-width: 81%;
+    margin: 1.5em auto;
+    clear: both;
+    border-top: 1px solid #E8ECEF;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2em;
+    color: #353535;
+	}
+
+	.four-column-section {
+    min-height: 5%;
+	}
+
+	.one-column-area {
+	  width: 100%;
+	}
+
+	.two-column-area {
+	  float: left;
+	  width: 50%;
+	}
+
+	.three-column-area {
+	  float: left;
+	  width: 33.33333%;
+	}
+
+	.four-column-area {
+	  float: left;
+	  width: 25%;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      text-align: center;
+    }
+	}
+
+	// .five-column-area {
+	//   float: left;
+	//   width: 20%;
+  //
+  //   @media screen and (max-width: 768px) {
+  //     width: 100%;
+  //     text-align: center;
+  //   }
+	// }
+
+	.one-column-area, .two-column-area, .three-column-area, .four-column-area {
+		padding: 2%;
+	}
+
+	// .five-column-area {
+	// 	padding: 1%;
+	// }
+
+	single-column-area, .two-column-area, .three-column-area, .four-column-area, .five-column-area {
+	  strong {
+	    font-weight: bold;
+	  }
+	  i,em{
+	    font-style: italic;
+	  }
+	}
+
+  .logolLinks {
+    padding: 1%;
+    display: block;
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+
+      @media screen and (max-width: 768px) {
+        max-width: 60%;
+        display: inline-block;
+      }
+    }
+  }
+
+  .socialLinks {
+    border: 0;
+    padding-left: 2px;
+  }
+
+  .logoArea {
+    width: 100%;
+    text-align: center;
+
+    @media screen and (min-width: 1013px) {
+      width: 80%;
+      padding: 1%;
+      display: flex;
+  	  float: left;
+      justify-content: space-between;
+    }
+  }
+
+  .socialArea {
+    width: 100%;
+    text-align: center;
+    padding-top: 1%;
+
+    @media screen and (min-width: 1013px) {
+      float: left;
+      width: 20%;
+    }
+  }
+
+}
+
+
+/**********************************************************************************
+  Used every where
+**********************************************************************************/
+
+.display-none {
+	display: none;
+}
+
+.apos-area.apos-empty {
+	background-color: transparent !important;
+}
+
+.apos-area-widget {
+  z-index: 100;
+  position: inherit;
+}
