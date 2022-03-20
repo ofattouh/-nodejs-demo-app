@@ -70,7 +70,7 @@ var apos = require('apostrophe')({
 	    passwordReset: true,      
 	    passwordResetHours: 48,
 	    email: {
-	      	from: 'customerservice@beyondsilence.ca'
+	      	from: 'customerservice@XXX.ca'
 	    }
 		},
 		'apostrophe-email': {  // See the nodemailer documentation @ https://nodemailer.com/smtp/	    
