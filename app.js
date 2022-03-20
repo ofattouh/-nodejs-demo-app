@@ -56,7 +56,7 @@ var apos = require('apostrophe')({
 	  },
 	  
     // Custom modules & widgets
-    'beyond-silence-theme': {},            // Site theme
+    'nodejs-demo-theme': {},            // Site theme
     'link-widgets': {},
     'page-link-widgets': {},
     'nav-widgets': {},                     // Navigation widget
