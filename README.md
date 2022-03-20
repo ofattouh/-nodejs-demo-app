@@ -15,4 +15,4 @@ Now you're all set! Just run `node app.js` to start up the local server and head
 ---------------
 
 For more documentation on Apostrophe, visit the [A2 documentation site](http://apostrophecms.com).
-# beyondsilence
+
