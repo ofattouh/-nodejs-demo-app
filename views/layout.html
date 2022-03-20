@@ -26,7 +26,7 @@
   {# This block outputs its contents in the HTML document's <head>. It is a good place to put extra <script> <link> and <meta> tags. #}
   
   <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130206896-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxx"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
@@ -64,9 +64,9 @@
   
   <!-- Twitter Card data -->
 	<meta name="twitter:card"    content="summary" />
-	<meta name="twitter:site"    content="@PSHSAca" />
+	<meta name="twitter:site"    content="@xxxca" />
 	<meta name="twitter:title"   content="{{ siteTitle }} - {{ title }}" />
-	<meta name="twitter:creator" content="@pshsaca" />
+	<meta name="twitter:creator" content="@xxx" />
 
   <!-- Open Graph data -->
   <meta property="og:title"     content="{{ siteTitle }} - {{ title }}" /> 
@@ -117,36 +117,3 @@
   }}
 	 
 {% endblock %}
-
-
-
-{#
-
-Debug:
-
-
-{{ apos.log(process.env) }}
-
-{{ apos.log(apos) }}
-
-{{ apos.log(apos.assets.stylesheets('anon')) }}
-
-{{ apos.log(data.global.external_styles) }}
-
-{{ apos.log('\n\nPage Description:\n') }}
-{{ apos.log(description) }}
-
-{{ apos.log('\n\nWidget Area Description:\n') }}
-{{ apos.log(apos.areas.plaintext(context.body)) }}
-
-{{ apos.log('\n\nfirstImage:\n') }}
-{{ apos.log(firstImage) }}
-
-{{ apos.log('\n\nfirstImage attachments:\n') }}
-{{ apos.log(apos.attachments.url(firstImage, { size: 'full' })) }}
-
-{{ apos.log('\n\n==============\ndata.page\n==============\n') }}
-{{ apos.log(data.page) }}
-
-
-#}
