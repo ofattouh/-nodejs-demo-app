@@ -1,9 +1,9 @@
 var path = require('path');
 
 var apos = require('apostrophe')({
-  shortName: 'beyondsilence_live',
-  title:     'Beyond Silence',
-  baseUrl:   'https://www.beyondsilence.ca',
+  shortName: 'nodejs-demo-app',
+  title:     'NodeJS Demo App',
+  baseUrl:   'https://www.nodejs-demo-app.ca',
 
   // See lib/modules for basic project-level configuration of our modules
   // responsible for serving static assets, managing page templates and
@@ -13,7 +13,7 @@ var apos = require('apostrophe')({
 	
     'apostrophe-express': {
       port: 3000,  		             // Set the default port number to run Apostrophe to get rid of the warning
-      address: '162.144.146.181',  // By default Apostrophe listens for connections on all interfaces (0.0.0.0)   
+      address: '99.99.99.999',  // By default Apostrophe listens for connections on all interfaces (0.0.0.0)   
       csrf: {
 			  //exceptions: [ '/cheesy-post-route' ],
 			  cookie: {
@@ -73,19 +73,7 @@ var apos = require('apostrophe')({
 	      	from: 'customerservice@beyondsilence.ca'
 	    }
 		},
-		'apostrophe-email': {  // See the nodemailer documentation @ https://nodemailer.com/smtp/
-       nodemailer: {	  	
-			   newline: 'unix',
-			   sendmail: true,              // sendmail transport which works with Postfix - not installed on Windows machines
-			   path: '/usr/sbin/sendmail',  // Linux server
-			   host: 'mail.beyondsilence.ca',
-			   port: 465,
-	       secure: true,  // SSL
-	       auth: {
-	        	user: 'customerservice@beyondsilence.ca',
-	        	pass: 'AlafFq^K3BQflF[pw2*}qBJC',
-	       }
-			},   	    
+		'apostrophe-email': {  // See the nodemailer documentation @ https://nodemailer.com/smtp/	    
 	  },
     'apostrophe-maintenance-mode': {},     // Maintenance module
     //'redirect-login': {},  				       // Redirect the user after login
